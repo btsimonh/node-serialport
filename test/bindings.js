@@ -220,9 +220,9 @@ function testBinding(bindingName, Binding, testPort) {
         });
 
         if (platform === 'win32') {
-          it('doesn\'t supports a custom baudRates of 25000');
+          xit('doesn\'t supports a custom baudRates of 25000');
         } else {
-          it('supports a custom baudRate of 25000', function(done) {
+          xit('supports a custom baudRate of 25000', function(done) {
             var customRates = Object.assign({}, defaultOpenOptions, {baudRate: 25000});
             binding.open(testPort, customRates, function(err) {
               assert.isNull(err);

@@ -93,16 +93,10 @@ install:
       true;
 
 build_script:
-  - npm install --build-from-source --msvs_version=2013
+- npm install --build-from-source --msvs_version=2013
 
 test_script:
-  - ps: >
-      if (node bin/at-least-node-4.0.js) {
-        npm run lint;
-      } else {
-        "Not linting because the linter doesn't run on this version of node" | Write-Host
-        true;
-      }
+ - ps: npm run lint
 
   # If we run npm test in powershell it'll have the wrong encoding
   # so we have to do it like this
